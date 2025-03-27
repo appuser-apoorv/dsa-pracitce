@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StreamExample1 {
+public class StringUpperCase {
     public static void main(String[] args) {
         List<String>  name = Arrays.asList("john", "wick", "harry", "potter");
         List<String> upperCase = name.stream()

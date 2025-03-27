@@ -1,13 +1,12 @@
 // Filter Even Numbers from a List
 package StreamsPractice;
 
-import javax.swing.text.html.Option;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
-public class StreamExample2 {
+public class NumberProblemsInStreams {
     public static void main(String[] args) {
 
         List<Integer> numbers = Arrays.asList(1,2,4,6,7,5,7,8,12,15,22);

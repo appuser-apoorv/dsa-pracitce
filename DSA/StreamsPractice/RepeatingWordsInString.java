@@ -1,19 +1,10 @@
 package StreamsPractice;
 
-import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class StreamExample4 {
-
-    @Test
-    public void junitMethod(){
-        System.out.println("Executing Junit method");
-    }
+public class RepeatingWordsInString {
 
     public static void main(String[] args) {
         String input = "programming";
@@ -40,7 +31,7 @@ public class StreamExample4 {
         // Given a sentence , find the word that has the 2nd(Nth) highest length
         System.out.println();
         String input3 = "I am learning streams in java programming ";
-        String ans = Arrays.stream(input3.split(" "))
+        var ans = Arrays.stream(input3.split(" "))
                 .sorted(Comparator.comparing(String::length).reversed())
                 .skip(3)
                 .findFirst()
@@ -49,14 +40,14 @@ public class StreamExample4 {
 
         System.out.println();
          int newAns = Arrays.stream(input3.split(" "))
-                 .map(s->s.length())
+                 .map(String::length)
                  .sorted(Comparator.reverseOrder())
                  .skip(1)
                  .findFirst()
                  .get();
         System.out.println(newAns);
 
-        // Given a sentance find the occurance  of each word
+        // Given a sentence find the occurrence  of each word
         System.out.println();
 
         String input4 = "I am still learning java streams using java 8 am";
@@ -66,6 +57,29 @@ public class StreamExample4 {
 
         System.out.println(result1);
 
-        
+        System.out.println(" ======= ");
+
+        List<String> words = Arrays.asList("apple", "banana", "mango", "banana", "grapes", "banana", "mango");
+
+        Map.Entry<String,Long> mostFrequentWord = words.stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet()
+                .stream()
+                .max(Map.Entry.comparingByValue())
+                .orElse(null);
+
+        System.out.println(mostFrequentWord);
+
+        String input5 = "Hello World";
+        System.out.println(input5);
+        List<String> list = Arrays.asList(input5.split(" "));
+        Collections.reverse(list);
+        String result2 = list.stream().collect(Collectors.joining(" "));
+        System.out.println(result2);
+
+        System.out.println("====");
+        String result3 = String.join(" ", list);
+        System.out.println(result3);
+
     }
 }

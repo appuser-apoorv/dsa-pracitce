@@ -3,7 +3,7 @@ package StreamsPractice;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class StreamExample5 {
+public class NonRepeatingCharacters {
     public static char nonRepeatingCharacter(String input)
     {
         Map<Character, Integer> charCount = new LinkedHashMap<>();
