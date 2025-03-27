@@ -18,11 +18,11 @@ public class StreamExample5 {
             return  c;
         }
         }
-        return '_';
+        return 'N';
     }
 
     public static void main(String[] args) {
-        String input = "abcde";
+        String input = "aabbbccdde";
         System.out.println(nonRepeatingCharacter(input));
     }
 }
