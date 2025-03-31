@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class StringUpperCase {
+
+
+
     public static void main(String[] args) {
         List<String>  name = Arrays.asList("john", "wick", "harry", "potter");
         List<String> upperCase = name.stream()

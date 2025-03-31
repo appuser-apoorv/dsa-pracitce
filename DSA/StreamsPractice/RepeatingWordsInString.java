@@ -81,5 +81,14 @@ public class RepeatingWordsInString {
         String result3 = String.join(" ", list);
         System.out.println(result3);
 
+        System.out.println("------");
+        List<String> input6 = Arrays.asList("Hello", "World");
+        List<String> characters = input6.stream()
+                .map(s->s.split(""))
+                .flatMap(Arrays::stream)
+                .collect(Collectors.toList());
+
+        System.out.println(characters);
+
     }
 }
